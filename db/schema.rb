@@ -21,15 +21,15 @@ ActiveRecord::Schema.define(version: 2022_03_28_000225) do
     t.string "name"
     t.string "description"
     t.integer "time_commitment_hours"
+    t.integer "volunteer_id"
+    t.integer "organization_id"
+    t.index ["organization_id"], name: "index_tasks_on_organization_id"
+    t.index ["volunteer_id"], name: "index_tasks_on_volunteer_id"
   end
 
   create_table "volunteers", force: :cascade do |t|
     t.string "name"
     t.integer "age"
-    t.integer "volunteer_id"
-    t.integer "organization_id"
-    t.index ["organization_id"], name: "index_volunteers_on_organization_id"
-    t.index ["volunteer_id"], name: "index_volunteers_on_volunteer_id"
   end
 
 end

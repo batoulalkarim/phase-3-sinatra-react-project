@@ -4,6 +4,8 @@ class CreateTasks < ActiveRecord::Migration[6.1]
       t.string :name
       t.string :description
       t.integer :time_commitment_hours
+      t.references :volunteer
+      t.references :organization
     end
   end
 end
