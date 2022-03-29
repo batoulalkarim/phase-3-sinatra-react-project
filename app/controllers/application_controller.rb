@@ -36,12 +36,14 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/organizations' do
-    organization = Organization.create(
-      name: params[:name],
-      location: params[:location],
-      bio: params[:bio],
-      nested_tasks: params[:nested_tasks]
-    )
+    organization = Organization.create(organization_params)
+
+    private 
+
+    def organization_params
+        params.require(:organization).permit(:build, :pack_and_ship, :installation, volunteer_attributes: [:volunteer_id])
+    end
+
     organization.to_json
   end 
 
