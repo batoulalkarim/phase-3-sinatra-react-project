@@ -18,11 +18,11 @@ class ApplicationController < Sinatra::Base
   end
 
   # edit this for when you select an org from the drop down menu and want to pop page with specific org.
-  # get './organizations/:id' do 
-  #   organization = Organization.find(params[:id])
+  get './organizations/:id' do 
+    organization = Organization.find(params[:id])
 
-  #   organization.to_json
-  # end
+    organization.to_json(include: :tasks)
+  end
 
 
   get '/volunteers' do 
