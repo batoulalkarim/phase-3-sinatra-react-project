@@ -15,6 +15,8 @@ ActiveRecord::Schema.define(version: 2022_03_28_000225) do
   create_table "organizations", force: :cascade do |t|
     t.string "name"
     t.string "location"
+    t.string "bio"
+    t.string "nested_tasks"
   end
 
   create_table "tasks", force: :cascade do |t|

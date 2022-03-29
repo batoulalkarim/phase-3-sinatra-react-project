@@ -35,4 +35,27 @@ class ApplicationController < Sinatra::Base
     task.to_json
   end
 
+  post '/organizations' do
+    organization = Organization.create(
+      name: params[:name],
+      location: params[:location],
+      bio: params[:bio],
+      nested_tasks: params[:nested_tasks]
+    )
+    organization.to_json
+  end 
+
+  delete '/tasks' do
+    tasks = Task.destroy
+    tasks.to_json
+  end
+
+  patch '/tasks/:id' do
+    task = Task.find(params[:id])
+    task.update(
+    time_commitment_hours: params[:time_commitment_hours]
+    )
+    review.to_json
+  end
+
 end
