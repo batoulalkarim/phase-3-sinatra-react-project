@@ -35,17 +35,21 @@ class ApplicationController < Sinatra::Base
     task.to_json
   end
 
-  post '/organizations' do
-    organization = Organization.create(organization_params)
-
-    private 
-
-    def organization_params
-        params.require(:organization).permit(:build, :pack_and_ship, :installation, volunteer_attributes: [:volunteer_id])
+  get '/organizations/nested_tasks' do
+      "Hello World"
     end
 
-    organization.to_json
-  end 
+  # post '/organizations' do
+  #   organization = Organization.create(organization_params)
+
+  #   private 
+
+  #   def organization_params
+  #       params.require(:organization).permit(tasks_attributes: [build: {}, pack_and_ship: {}, installation: {}], volunteer_attributes: [:volunteer_id])
+  #   end
+
+  #   organization.to_json
+  # end 
 
   delete '/tasks' do
     tasks = Task.destroy

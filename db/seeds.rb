@@ -2,9 +2,21 @@ puts "🌱 Seeding spices..."
 
 puts "Creating organizations..."
 
-org1 = Organization.create(name: 'Hope For All', location: 'Cambodia');
-org2 = Organization.create(name: 'WaterWell', location: 'Gambia, Africa');
-org3 = Organization.create(name: 'Love&Water', location: 'Palestine');
+org1 = Organization.create(name: 'Hope For All', location: 'Cambodia', bio: "Our mission is to ensure all human beings have a clean safe source of Water. No human should go thirsty- our goal is to ensure none do anymore.",
+    build: "Help a team of engineers build water filters at our HeadQuarters in Denver, CO.",
+    pack_and_ship: "Pick up our filters from the building community, Pack them up in a secure package, and ship them to the proper country. We will cover all shipping and packaging fees.",
+    installation: "Join fellow Volunteers in flying to countries in need and help install these new water filters. See the pure joy on locals' faces when you grant them the access to clean water. *we will not pay for flights*"
+);
+org2 = Organization.create(name: 'WaterWell', location: 'Gambia, Africa', bio: "Our mission is to ensure all human beings have a clean safe source of Water. No human should go thirsty- our goal is to ensure none do anymore." , 
+    build: "Help a team of engineers build water filters at our HeadQuarters in Denver, CO.",
+    pack_and_ship: "Pick up our filters from the building community, Pack them up in a secure package, and ship them to the proper country. We will cover all shipping and packaging fees.",
+    installation: "Join fellow Volunteers in flying to countries in need and help install these new water filters. See the pure joy on locals' faces when you grant them the access to clean water. *we will not pay for flights*"
+);
+org3 = Organization.create(name: 'Love&Water', location: 'Palestine', bio: "Our mission is to ensure all human beings have a clean safe source of Water. No human should go thirsty- our goal is to ensure none do anymore." , 
+    build: "Help a team of engineers build water filters at our HeadQuarters in Denver, CO.",
+    pack_and_ship: "Pick up our filters from the building community, Pack them up in a secure package, and ship them to the proper country. We will cover all shipping and packaging fees.",
+    installation: "Join fellow Volunteers in flying to countries in need and help install these new water filters. See the pure joy on locals' faces when you grant them the access to clean water. *we will not pay for flights*"
+);
 
 puts "Creating volunteers..."
 vol1 = Volunteer.create(name: 'Rodney', age: 25);
